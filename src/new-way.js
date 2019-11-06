@@ -17,7 +17,7 @@ export default function(props) {
     return (
         <div {...props}>
             <h4>React Wrapper</h4>
-            <OdsButton buttonCallback={click} buttontype={type}>Hello World</OdsButton>
+            <OdsButton buttonCallback={click} buttontype={type} onBlur={() => alert('blur')}>Hello World</OdsButton>
             <button onClick={changeState}>Change Button</button>
         </div>
     );

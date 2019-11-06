@@ -27,7 +27,7 @@ export default class OldWay extends React.PureComponent {
     <div {...this.props}>
         {/*Old way to add a custom event listener in react*/}
         <h4>Without React Wrapper</h4>
-        <ods-button ref={this.buttonRef} buttontype={this.state.type}>Hello World</ods-button>
+        <ods-button ref={this.buttonRef} buttontype={this.state.type} >Hello World</ods-button>
         <button onClick={this.changeState}>Change Button</button>
     </div>
   );

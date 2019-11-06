@@ -1,5 +1,27 @@
 import React from 'react';
 
+const ReactEvents = [
+  "onCopy",
+  "onCut",
+  "onPaste",
+  "onKeyDown",
+  "onKeyPress",
+  "onKeyUp",
+  "onFocus",
+  "onBlur",
+  "onChange",
+  "onClick",
+  "onDoubleClick",
+  "onMouseDown",
+  "onMouseEnter",
+  "onMouseLeave",
+  "onMouseMove",
+  "onMouseOver",
+  "onMouseUp",
+  "onSelect",
+  "onInput"
+];
+
 class Wrapper extends React.PureComponent {
   ref = React.createRef();
   funcProps = {};
@@ -19,7 +41,7 @@ class Wrapper extends React.PureComponent {
     this.normalProps = {};
     for(let key in this.props) {
         const type = typeof this.props[key];
-        if(type === 'function' || type === 'object') {
+        if((type === 'function' || type === 'object') && !ReactEvents.includes(key)) {
             this.funcProps[key] = this.props[key];
         } else {
             this.normalProps[key] = this.props[key];
