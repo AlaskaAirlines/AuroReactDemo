@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@alaskaairux/ods-button": "^3.0.2",
+    "@alaskaairux/ods-button": "^3.0.3",
     "@alaskaairux/orion-design-tokens": "^2.7.3",
     "focus-visible": "^5.0.2",
     "react": "^16.11.0",
