@@ -18,7 +18,8 @@ class Wrapper extends React.PureComponent {
     this.funcProps = {};
     this.normalProps = {};
     for(let key in this.props) {
-        if(typeof this.props[key] === 'function') {
+        const type = typeof this.props[key];
+        if(type === 'function' || type === 'object') {
             this.funcProps[key] = this.props[key];
         } else {
             this.normalProps[key] = this.props[key];

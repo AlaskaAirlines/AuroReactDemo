@@ -20,3 +20,18 @@
 .App-link {
   color: #09d3ac;
 }
+
+#example-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#example-container > div {
+  margin:10px;
+}
+/*
+#old-way, #new-way {
+  width: 50%;
+  float: left;
+}
+*/
