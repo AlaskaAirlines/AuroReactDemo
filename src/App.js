@@ -3,8 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import '@alaskaairux/orion-design-tokens/dist/tokens/CSSTokenProperties.css';
 import '@alaskaairux/ods-button/dist/ods-button';
+import "@alaskaairux/ods-inputoptions";
+import "@alaskaairux/ods-toast";
+
 import OldWay from './old-way';
-import NewWay from './new-way';
+//import NewWay from './new-way';
 
 function App() {
   return (
@@ -13,7 +16,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <div id="example-container">
           <OldWay id="old-way"/>
-          <NewWay id="new-way"/>
         </div>
           
       </header>

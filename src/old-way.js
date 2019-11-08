@@ -1,35 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Swipe from "@alaskaairux/ods-toast/dist/swipe.js";
+import Toaster from "@alaskaairux/ods-toast/dist/toaster";
+import "@alaskaairux/ods-toast/dist/toaster.css";
 
-export default class OldWay extends React.PureComponent {
-    buttonRef = React.createRef();
+window.Swipe = Swipe;
+const toaster = new Toaster();
 
-  constructor() {
-    super();
-    this.state = {
-      click: () => alert('message 1'),
-      type: "primary"
-    }
-  }
-  componentDidMount() {
-      this.buttonRef.current.buttonCallback = this.state.click;
-  }
+export default function(props) {
+  const [click, setClick] = useState(() => () => toaster.add('message 1'));
+  const [type, setType] = useState('primary');
+  const [inputSelection, setInputSelection] = useState('none');
 
-  componentDidUpdate() {
-    this.buttonRef.current.buttonCallback = this.state.click;
+  const changeState = () => {
+      setClick(() => () => toaster.add('message 2'));
+      setType('secondary');
   }
 
-  changeState = () => {
-    this.setState({click: () => alert('message 2'), type: "secondary"});
-  }
-
-  render() {
   return (
-    <div {...this.props}>
-        {/*Old way to add a custom event listener in react*/}
-        <h4>Without React Wrapper</h4>
-        <ods-button ref={this.buttonRef} buttontype={this.state.type} >Hello World</ods-button>
-        <button onClick={this.changeState}>Change Button</button>
-    </div>
+      <div {...props}>
+          <ods-button onClick={click} buttontype={type}>Hello World</ods-button>
+          <ods-inputoptions
+            id="rdo"
+            type="radio"
+            name="rdo"
+            label={`Your Choice: ${inputSelection}`}
+            onInput={e => setInputSelection(e.target.value)}
+            for="radio1" componentData='[
+          { "id": "radio1", "value": "yes", "label": "Yes" },
+          { "id": "radio2", "value": "no", "label": "No" },
+          { "id": "radio3", "value": "maybe", "label": "Maybe" }
+        ]'></ods-inputoptions>
+          <button onClick={changeState}>Change Button</button>
+      </div>
   );
-  }
 }
