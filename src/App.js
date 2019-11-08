@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import '@alaskaairux/orion-design-tokens/dist/tokens/CSSTokenProperties.css';
-// import '@alaskaairux/ods-button/dist/ods-button';
+import '@alaskaairux/orion-design-tokens/dist/tokens/CSSTokenProperties.css';
+import '@alaskaairux/ods-button/dist/ods-button';
 import OldWay from './old-way';
 import NewWay from './new-way';
 
