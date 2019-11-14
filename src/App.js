@@ -1,23 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import '@alaskaairux/orion-design-tokens/dist/tokens/CSSTokenProperties.css';
-import '@alaskaairux/ods-button/dist/ods-button';
-import "@alaskaairux/ods-inputoptions";
-import "@alaskaairux/ods-toast";
-
-import OldWay from './old-way';
-//import NewWay from './new-way';
+import '@alaskaairux/orion-icons/dist/tokens/CSSTokenProperties.css'
+import Components from './Components';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Web Component Demo</h1>
         <div id="example-container">
-          <OldWay id="old-way"/>
-        </div>
-          
+          <Components />
+        </div>          
       </header>
     </div>
   );
