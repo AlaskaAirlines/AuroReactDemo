@@ -9,6 +9,7 @@ const toaster = new Toaster();
 
 export default function Components(props) {
   const [type, setType] = useState('primary');
+  const [message, setMessage] = useState('message 1');
   const [inputSelection, setInputSelection] = useState(null);
   const [componentData, setComponentData] = useState([
     {
@@ -25,15 +26,14 @@ export default function Components(props) {
     }
   ]);
   const inputOptionsRef = useRef(null);
-  const buttonRef = useRef(null);
 
   useEffect(() => {
     inputOptionsRef.current.componentData = componentData
-    buttonRef.current.addEventListener('click', handleClick);
   })
 
   const changeState = () => {
     setType('secondary');
+    setMessage('message 2');
   }
 
   const handleInput = (e) => {
@@ -47,13 +47,12 @@ export default function Components(props) {
   }
 
   const handleClick = () => {
-    console.log('clicked');
-    toaster.add('message 1');
+    toaster.add(message);
   }
 
   return (
     <div>
-      <ods-button ref={buttonRef} buttontype={type}>Toast</ods-button>
+      <ods-button onClick={handleClick} buttontype={type}>Toast</ods-button>
       <ods-inputoptions
         ref={inputOptionsRef}
         id="rdo"
