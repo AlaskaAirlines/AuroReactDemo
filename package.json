@@ -10,8 +10,8 @@
     "@alaskaairux/orion-design-tokens": "^2.7.3",
     "@alaskaairux/orion-icons": "^1.7.3",
     "focus-visible": "^5.0.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
