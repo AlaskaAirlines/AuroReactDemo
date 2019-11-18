@@ -58,11 +58,12 @@ class Wrapper extends React.PureComponent {
 
   render() {
     this.calculateProps();
-    const TagName = this.TagName;
-    return (
-      <TagName ref={this.ref} {...this.normalProps}>
-        {this.props.children}
-      </TagName>
+    return React.createElement(
+      this.TagName || this.props.tagName, 
+      {
+        ref: this.ref,
+        ...this.normalProps
+      }
     );
   }
 }
