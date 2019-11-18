@@ -1,10 +1,12 @@
 # OrionReactDemo
-An example React App with Orion Components integrated. This app runs and works in all Alaska-supported browsers. Below are instructions for adding Orion-compatibility to your React application. These instructions are intended for projects that were bootstrapped with Create React App. They are written from the perspective of a newly generated project, but it should be clear where to add these lines in an existing project. If your project has ejected or is using a custom Webpack config, see the Vanilla JS demo app and instructions.
+An example React App with Orion Components integrated. This app runs and works in all Alaska-supported browsers. Explore the project source to see the Orion Components being used in a React environment.
+
+Below are instructions for adding Orion compatibility to your React application. These instructions are intended for projects that were bootstrapped with Create React App. They are written from the perspective of a newly generated project, but it should be clear where to add these lines in an existing project. If your project has ejected or is using a custom Webpack config, see the Vanilla JS demo app and instructions.
 
 ## Setting up your React app to use Orion Web Components
 The following steps will let you start using Web Components in your React application across all supported browsers.
 
-1. Install the necessary packages by running `npm install --save-dev @alaskaairux/ods-button @alaskaairux/orion-design-tokens focus-visible` in a terminal.
+1. Install the necessary packages by running `npm install --save-dev @alaskaairux/ods-button @alaskaairux/orion-design-tokens focus-visible` in a terminal. `@alaskaairux/ods-button` is the button component itself. `@alaskaairux/orion-design-tokens` and `focus-visible` are required dependencies for tokens and focus styles, respectively.
 
 1. Add a reference to `webcomponents-loader.js` in the head of `index.html`. This will detect whether the user's browser supports Web Components and will polyfill any required features. This example loads the polyfills from a CDN, but you can serve them with your application if you want. Make sure you include the `defer` attribute -- conflicting polyfills may prevent the app from loading otherwise.
 
@@ -12,22 +14,23 @@ The following steps will let you start using Web Components in your React applic
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2/webcomponents-loader.js" defer></script>
     ```
 
-1. Next, update `index.js` to import the Orion Components once the polyfills have loaded.
+1. Add a file called `webcomponents.js` in the `src` directory. You will add any additional Web Component imports here. After you import a component here, you can use it throughout the rest of your application. For now, just import `ods-button`.
+
+    ```js
+    import '@alaskaairux/ods-button';
+    ```
+
+1. Next, update `index.js` to import the Orion Components once the polyfills have loaded. This guarantees that Web Components are not defined until the browser polyfills are ready.
 
     ```js
     import * as serviceWorker from './serviceWorker';
 
+    // add this line
     window.addEventListener('WebComponentsReady', () => {
         return import('./webcomponents');
     });
 
     ReactDOM.render(<App />, document.getElementById('root'));
-    ```
-
-1. Add a file called `webcomponents.js` in the `src` directory. You will add any additional Web Component imports here. This guarantees that Web Components are not defined until the browser polyfills are ready. For now, just import `ods-button`
-
-    ```js
-    import '@alaskaairux/ods-button';
     ```
 
 1. In `App.js`, import the Orion Design Tokens from the npm package. The design tokens need to be available for the component to render.
@@ -48,18 +51,37 @@ The following steps will let you start using Web Components in your React applic
     }
     ```
 
-1. Run the application. The button should render and trigger an alert when clicked.
+1. Run the application with `npm start`. The button should render and trigger an alert when clicked.
 
 ## Setting up your React app to work with IE11
 Some additional steps must be taken to get your React app working in IE11. 
 
-1. Add `"ie 11"` to the development browserslist configuration in `package.json`. This will let you test your app in IE11 during development.
+1. Add `"ie 11"` to the production and development browserslist configurations in `package.json`. This will let you test your app in IE11 during development.
+
+    ```js
+    "browserslist": {
+        "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all",
+        "ie 11"
+        ],
+        "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version",
+        "ie 11"
+        ]
+    }
+    ```
 
 1. Add the following lines to the top of `index.js`
     ```js
     import 'react-app-polyfill/ie11';
     import 'react-app-polyfill/stable';
     ```
-These import the polyfills necessary for using React and other modern Javascript features in legacy browers.
+    These lines import the polyfills necessary for using React and other modern Javascript features in legacy browers.
+
+1. Delete the `.cache` directory in `node_modules`.
 
 You should now be able to run the app in IE11 without errors. Run `npm start` in the terminal and view the application in IE11.
