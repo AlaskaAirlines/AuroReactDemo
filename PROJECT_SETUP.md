@@ -8,7 +8,7 @@ The following steps will let you start using Web Components in your React applic
 
 1. Install the necessary packages by running `npm install --save-dev @alaskaairux/ods-button @alaskaairux/orion-design-tokens focus-visible` in a terminal. `@alaskaairux/ods-button` is the button component itself. `@alaskaairux/orion-design-tokens` and `focus-visible` are required dependencies for tokens and focus styles, respectively.
 
-1. Add a reference to `webcomponents-loader.js` in the head of `index.html`. This will detect whether the user's browser supports Web Components and will polyfill any required features. This example loads the polyfills from a CDN, but you can serve them with your application if you want. Make sure you include the `defer` attribute -- conflicting polyfills may prevent the app from loading otherwise.
+1. Add a reference to `webcomponents-loader.js` in the head of `public\index.html`. This will detect whether the user's browser supports Web Components and will polyfill any required features. This example loads the polyfills from a CDN, but you can serve them with your application if you want. Make sure you include the `defer` attribute -- conflicting polyfills may prevent the app from loading otherwise.
 
     ```html
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2/webcomponents-loader.js" defer></script>
