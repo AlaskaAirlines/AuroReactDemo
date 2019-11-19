@@ -85,3 +85,97 @@ Some additional steps must be taken to get your React app working in IE11.
 1. Delete the `.cache` directory in `node_modules`.
 
 You should now be able to run the app in IE11 without errors. Run `npm start` in the terminal and view the application in IE11.
+
+## Importing Orion Web Core Stylesheets 
+
+Orion Web Core Style sheets is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Orion Design Language.
+
+This resource is built using Sass, so you will need to install Sass in your project. 
+
+```
+$ npm i node-sass
+```
+
+Also install the Orion Web Core Stylesheets.
+
+```javascript
+$ npm i @alaskaairux/orion-web-core-style-sheets
+```
+
+After installing `node-sass`, rename `index.css` to `index.scss` and rename the import in `index.js`.  
+
+### Importing the stylesheets
+
+We will place our global stylesheet imports into `index.scss`. 
+
+At the top of the document, first point to the Sass version of the Orion Design Tokens:
+
+```scss
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables';
+```
+
+Installing this resource allows for the use of Sass variables of the Orion Design Tokens. 
+
+Next, let's point to Orion Breakpoints:
+
+```scss
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+```
+
+This is a functional utility file that lists all the different [pre-defined mobile-first breakpoints](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/#responsive-mixin). 
+
+Next, let's install the `@font-face` styles. If loading the fonts from a CDN, set `$asset-font-circular-dir` to the folder containing the fonts. 
+
+```scss
+$asset-font-circular-dir: 'https://resource.alaskaair.net/stylesheets/circular/';
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/fonts";
+```
+
+This file contains all the `@font` rules for using the approved Orion fonts. See the [font documentation](https://github.com/AlaskaAirlines/OrionWebCoreStyleSheets/blob/master/staticDocs/howToUseFonts.md) for more information on consuming the Orion Web Fonts.
+
+Next, let's point to the normalize styles:
+
+```scss
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+```
+
+This file sets a normalization across all browsers. It's like a reset, but not as harsh. 
+
+Last, point to the Orion Baseline file:
+
+```scss
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/baseline";
+```
+
+The role of this file is to establish a shared baseline CSS between projects and browsers alike. 
+
+If interested, there is a growing standard of utility selectors that can be used with projects as well.
+
+```scss
+@import "~@alaskaair/orion-web-core-style-sheets/dist/utilityClasses";
+```
+
+[View here](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/) to see the entire OWCSS API, including the various Utility Selectors currently available. 
+
+
+## Orion Icons
+
+Orion Icons is a standard set of SVG icons that can be used with any web project. See the [icons reference](http://orion-design.surge.sh/#icons) for a visual grid of icons currently being used. 
+
+```Javascript
+$ npm i @alaskaairux/orion-icons
+```
+
+Post install, your project will need to import the Icon specific Design Tokens. To do this, you can either link to the CSS file that is contained within the distributed package: 
+
+```Javascript
+import "@alaskaairux/orion-icons/dist/tokens/CSSTokenProperties.css";
+```
+
+Or you can import the Icon Token properties in your Sass setup:
+
+```scss
+@import "~@alaskaairux/orion-icons/dist/tokens/TokenProperties"
+```
+
+All other use documentation can be found in the repository's [README](https://github.com/AlaskaAirlines/OrionIcons/blob/master/README.md) file. 
