@@ -25,16 +25,18 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all",
-      "ie 11"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 edge version",
+      "ie 11",
+      "last 2 safari major version"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "ie 11"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 edge version",
+      "ie 11",
+      "last 2 safari major version"
     ]
   }
 }
