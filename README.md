@@ -1,4 +1,5 @@
-# OrionReactDemo
+# Web Component React Demo
+
 An example React App with Orion Components integrated. This app runs and works in all Alaska-supported browsers. Explore the project source to see the Orion Components being used in a React environment. See the [Project Setup documentation](./PROJECT_SETUP.md) for information on setting up your own project to use Orion Components.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,3 +70,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+##
+
+<footer>
+Alaska Airlines Orion Design System<br>
+Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
+</footer>
