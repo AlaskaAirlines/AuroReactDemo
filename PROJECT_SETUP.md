@@ -1,4 +1,5 @@
-# OrionReactDemo
+# Web Component React Demo Setup
+
 An example React App with Orion Components integrated. This app runs and works in all Alaska-supported browsers. Explore the project source to see the Orion Components being used in a React environment.
 
 Below are instructions for adding Orion compatibility to your React application. These instructions are intended for projects that were bootstrapped with Create React App. They are written from the perspective of a newly generated project, but it should be clear where to add these lines in an existing project. If your project has ejected or is using a custom Webpack config, see the [Vanilla JS demo app and instructions](https://github.com/AlaskaAirlines/OrionJavascriptDemo).
