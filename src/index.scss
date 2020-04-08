@@ -1,7 +1,9 @@
-@import '~@alaskaairux//orion-design-tokens/dist/tokens/TokenProperties';
-@import '~@alaskaairux//orion-design-tokens/dist/tokens/TokenVariables';
-@import '~@alaskaairux/orion-web-core-style-sheets/dist/breakpoints';
-@import '~@alaskaairux/orion-web-core-style-sheets/dist/baseline';
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables'; // Auro design tokens as Sass variables, required to import WCSS
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties'; // Auro design tokens as CSS Custom Properties, used by auro-* components
+@import '~@alaskaairux/orion-design-tokens/dist/tokens/TokenProperties'; // Deprecated Orion design tokens for ods-* components
 
-$asset-font-circular-dir: 'https://resource.alaskaair.net/stylesheets/circular/';
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
 @import '~@alaskaairux/orion-web-core-style-sheets/dist/fonts';
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/normalize";
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/essentials";
+@import "~@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";

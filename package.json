@@ -4,16 +4,16 @@
   "private": true,
   "dependencies": {
     "@alaskaairux/ods-button": "^4.3.1",
-    "@alaskaairux/ods-hyperlink": "^1.4.3",
+    "@alaskaairux/ods-hyperlink": "^1.4.5",
     "@alaskaairux/ods-inputoptions": "^1.1.7",
-    "@alaskaairux/ods-toast": "^1.1.1",
+    "@alaskaairux/ods-toast": "^1.1.2",
     "@alaskaairux/orion-design-tokens": "^2.10.9",
-    "@alaskaairux/orion-icons": "^1.9.0",
-    "focus-visible": "^5.0.2",
+    "@alaskaairux/orion-icons": "^2.1.4",
+    "focus-visible": "^5.1.0",
     "node-sass": "^4.13.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "^3.4.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "@alaskaairux/orion-web-core-style-sheets": "^2.8.11"
+    "@alaskaairux/orion-web-core-style-sheets": "^2.8.14"
   }
 }

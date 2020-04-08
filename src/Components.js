@@ -52,7 +52,6 @@ export default function Components(props) {
 
   return (
     <div>
-      <ods-button onClick={handleClick} buttontype={type}>Toast</ods-button>
       <ods-inputoptions
         ref={inputOptionsRef}
         id="rdo"
@@ -61,7 +60,9 @@ export default function Components(props) {
         label={`Your Choice: ${JSON.stringify(inputSelection)}`}
         onInput={handleInput}
         for="radio1" componentData="[]"></ods-inputoptions>
-      <ods-button onClick={changeState}>Change Toaster</ods-button>
+      <auro-button onClick={handleClick} secondary={type === 'secondary' || undefined}>Toast</auro-button>
+      <auro-button onClick={changeState}>Change Toaster</auro-button>
     </div>
+
   );
 }

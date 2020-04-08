@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.scss';
-import '@alaskaairux/orion-design-tokens/dist/tokens/CSSTokenProperties.css';
-import '@alaskaairux/orion-icons/dist/tokens/CSSTokenProperties.css'
 import Components from './Components';
 
 function App() {
