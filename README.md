@@ -1,6 +1,6 @@
 # Web Component React Demo
 
-An example React App with Orion Components integrated. This app runs and works in all Alaska-supported browsers. Explore the project source to see the Orion Components being used in a React environment. See the [Project Setup documentation](./PROJECT_SETUP.md) for information on setting up your own project to use Orion Components.
+An example React App with Auro Components integrated. This app runs and works in all Alaska-supported browsers. Explore the project source to see the Auro Components being used in a React environment. See the [Project Setup documentation](./PROJECT_SETUP.md) for information on setting up your own project to use Auro Components.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
