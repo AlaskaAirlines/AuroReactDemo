@@ -75,6 +75,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ##
 
 <footer>
-Alaska Airlines Orion Design System<br>
+Alaska Airlines Auro Design System<br>
 Copyright 2019 Alaska Airlines, Inc. or its affiliates. All Rights Reserved.
 </footer>
