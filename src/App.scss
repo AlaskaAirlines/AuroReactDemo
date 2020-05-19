@@ -1,35 +1,9 @@
-.App {
-  text-align: center;
+main {
+  display: block; /* for IE11 */
+  position: relative;
+  max-width: 56em;
+  background-color: white;
+  padding: 2em;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
-#example-container {
-  display: flex;
-  flex-direction: row;
-}
-
-#example-container > div {
-  margin:10px;
-}
-/*
-#old-way, #new-way {
-  width: 50%;
-  float: left;
-}
-*/

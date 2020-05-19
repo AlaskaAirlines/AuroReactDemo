@@ -5,7 +5,7 @@
   "dependencies": {
     "@alaskaairux/ods-button": "^4.3.1",
     "@alaskaairux/ods-hyperlink": "^1.4.5",
-    "@alaskaairux/ods-inputoptions": "^1.1.7",
+    "@alaskaairux/ods-inputoptions": "^2.0.2",
     "@alaskaairux/ods-toast": "^1.1.2",
     "@alaskaairux/orion-design-tokens": "^2.10.9",
     "@alaskaairux/orion-icons": "^2.1.5",

@@ -2,8 +2,8 @@
 @import '~@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties'; // Auro design tokens as CSS Custom Properties, used by auro-* components
 @import '~@alaskaairux/orion-design-tokens/dist/tokens/TokenProperties'; // Deprecated Orion design tokens for ods-* components
 
-@import "~@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
+@import '~@alaskaairux/orion-web-core-style-sheets/dist/breakpoints';
 @import '~@alaskaairux/orion-web-core-style-sheets/dist/fonts';
-@import "~@alaskaairux/orion-web-core-style-sheets/dist/normalize";
-@import "~@alaskaairux/orion-web-core-style-sheets/dist/essentials";
-@import "~@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
+@import '~@alaskaairux/orion-web-core-style-sheets/dist/normalize';
+@import '~@alaskaairux/orion-web-core-style-sheets/dist/essentials';
+@import '~@alaskaairux/orion-web-core-style-sheets/dist/headings';
