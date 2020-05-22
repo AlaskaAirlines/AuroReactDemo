@@ -11,27 +11,27 @@ const toaster = new Toaster();
 function App() {
   const [type, setType] = useState('primary');
   const [options, setOptions] = useState([
-		{
-			id: 'cbx1',
-			value: 'yes',
-			label: 'Yes',
-			checked: false
-		},
-		{
-			id: 'cbx2',
-			value: 'no',
-			label: 'No',
-			checked: false
-		}
-	]);
+    {
+      id: 'cbx1',
+      value: 'yes',
+      label: 'Yes',
+      checked: false
+    },
+    {
+      id: 'cbx2',
+      value: 'no',
+      label: 'No',
+      checked: false
+    }
+  ]);
   const changeType = () => {
-    const newType = type === 'primary' ? 'secondary' : 'primary'; 
+    const newType = type === 'primary' ? 'secondary' : 'primary';
     setType(newType);
   }
 
   const handleInput = (e) => {
     const { target } = e;
-    
+
     let updatedOptions = options.map(
       option => option.value === target.value  ?
         { ...option, checked: target.checked } : option);
@@ -47,10 +47,10 @@ function App() {
     <main>
 	    <h1 class="heading--display">Web Component Demo</h1>
       <ods-inputoption-checkbox-group
-        label={`Your Choice: ${JSON.stringify(options.filter(option => option.checked).map(option => option.value))}`}        
+        label={`Your Choice: ${JSON.stringify(options.filter(option => option.checked).map(option => option.value))}`}
         for="cbxDemo1">
         {options.map(
-          option => 
+          option =>
             <ods-inputoption id={option.id} label={option.label} type="checkbox" value={option.value} checked={option.checked || undefined} onInput={handleInput}></ods-inputoption>)}
 	    </ods-inputoption-checkbox-group>
       <auro-button onClick={toast} secondary={type === 'secondary' || undefined}>Toast</auro-button>
