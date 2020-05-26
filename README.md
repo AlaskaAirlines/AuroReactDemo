@@ -2,7 +2,13 @@
 
 Interested in starting a new project using Auro and React? This demo project is a complete example that includes basic setup. 
 
-This app runs and works in all [supported browsers](http://auro.alaskaair.com/support/browsersSupport). Please explore the project source to see how the Auro components are being used in a React development environment. 
+To locally run this demo: 
+
+```bash
+$ git clone https://github.com/AlaskaAirlines/AuroReactDemo.git
+```
+
+The app runs and works in all [supported browsers](http://auro.alaskaair.com/support/browsersSupport). Please explore the project source to see how the Auro components are being used in a React development environment. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
