@@ -4,8 +4,6 @@ Interested in starting a new project using Auro and React? This demo project is 
 
 This app runs and works in all [supported browsers](http://auro.alaskaair.com/support/browsersSupport). Please explore the project source to see how the Auro components are being used in a React development environment. 
 
-The [project setup documentation](./PROJECT_SETUP.md) contains all the information for setting up your own project using Auro components.
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Example App API
@@ -72,7 +70,8 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 Design tokens are a set of pre-defined variables used to manage the design of products. In the `App.js`, import the design tokens. 
 
-1. In `App.js`, import the Auro Design Tokens from the npm package. The design tokens need to be available for the component to render.
+In `App.js`, import the Auro Design Tokens from the npm package. The design tokens need to be available for the component to render.
+
 ```js
 import '@alaskaairux/orion-design-tokens/dist/tokens/CSSCustomProperties.css';
 ```
