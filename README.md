@@ -180,3 +180,6 @@ Delete the `.cache` directory in `node_modules`.
 
 Run `$ npm start` in the terminal and view the application in IE11.
 
+## Development 
+
+This project uses Semantic Release with Conventional Commits. Please be sure to review our [Contributing Guidelines](https://auro.alaskaair.com/getting-started/developers/contributing) for more info. 
