@@ -3,26 +3,72 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@alaskaairux/ods-button": "^4.4.7",
-    "@alaskaairux/ods-hyperlink": "^1.4.7",
+    "@alaskaairux/auro-checkbox": "^1.1.0",
+    "@alaskaairux/ods-button": "^4.6.1",
+    "@alaskaairux/ods-hyperlink": "^1.5.1",
     "@alaskaairux/ods-inputoptions": "^2.0.2",
     "@alaskaairux/ods-toast": "^1.1.2",
     "@alaskaairux/orion-design-tokens": "^2.11.0",
     "@alaskaairux/orion-icons": "^2.1.5",
+    "@alaskaairux/orion-web-core-style-sheets": "^2.10.1",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "focus-visible": "^5.1.0",
+    "husky": "^4.2.5",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "semantic-release": "^17.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "echo \"No tests specified\" && exit 0",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "./CHANGELOG.md",
+          "changelogTitle": "# Semantic Release Automated Changelog"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "./CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "browserslist": {
     "production": [
@@ -39,8 +85,5 @@
       "ie 11",
       "last 2 safari major version"
     ]
-  },
-  "devDependencies": {
-    "@alaskaairux/orion-web-core-style-sheets": "^2.9.4"
   }
 }
