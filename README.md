@@ -1,4 +1,4 @@
-# Auro Web Components: React Demo
+# React Demo
 
 Interested in starting a new project using Auro and React? This demo project is a complete example that includes basic setup. 
 
@@ -129,7 +129,7 @@ At the top of the document, import basic dependencies:
 @import "~@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses";
 ```
 
-For more information about these files, be sure to see [the full API](https://alaskaairlines.github.io/OrionWebCoreStyleSheets/), including the various Utility Selectors currently available. 
+For more information about these files, be sure to see [the full API](https://alaskaairlines.github.io/WebCoreStyleSheets/), including the various Utility Selectors currently available. 
 
 
 ## Icon Library
@@ -140,7 +140,7 @@ The Icons package contains standard set of SVG icons that can be used with any w
 $ npm i @alaskaairux/orion-icons -D
 ```
 
-Further documentation can be found in the repository's [README](https://github.com/AlaskaAirlines/Icons/blob/master/README.md) file. 
+Further documentation can be found in the repository's [README](https://auro.alaskaair.com/icons/install) file. 
 
 ## IE11 support 
 
