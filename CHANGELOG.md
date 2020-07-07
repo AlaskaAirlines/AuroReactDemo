@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.2](https://github.com/AlaskaAirlines/AuroReactDemo/compare/v1.0.1...v1.0.2) (2020-07-07)
+
+
+### Bug Fixes
+
+* add npm release config ([c7d0e81](https://github.com/AlaskaAirlines/AuroReactDemo/commit/c7d0e8158654940bf95dc5772db4540de97814da))
+
 ## [1.0.1](https://github.com/AlaskaAirlines/AuroReactDemo/compare/v1.0.0...v1.0.1) (2020-07-07)
 
 
