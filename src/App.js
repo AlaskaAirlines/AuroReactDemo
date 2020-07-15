@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.scss';
 
 import Swipe from "@alaskaairux/ods-toast/dist/swipe.js";
@@ -24,12 +24,26 @@ function App() {
       checked: false
     }
   ]);
+
+  // Because the change event from auro-checkbox is a custom event, onChange does not pick it up
+  // due to React's synthetic event system
+  // We need to add the event listener using a ref instead
+  // If you do not need to support IE, you can listen to the input event inline instead of using a ref.
+  const checkboxGroupEl = useRef(null);
+  useEffect(() => {
+    const checkboxGroup = checkboxGroupEl.current;
+    checkboxGroup.addEventListener('change', handleChange);
+    return function cleanup() {
+      checkboxGroup.removeEventListener('change', handleChange);
+    };
+  });
+
   const changeType = () => {
     const newType = type === 'primary' ? 'secondary' : 'primary';
     setType(newType);
   }
 
-  const handleInput = (e) => {
+  const handleChange = (e) => {
     const { target } = e;
 
     let updatedOptions = options.map(
@@ -45,14 +59,24 @@ function App() {
 
   return (
     <main>
-	    <h1 class="heading--display">Web Component Demo</h1>
-      <ods-inputoption-checkbox-group
-        label={`Your Choice: ${JSON.stringify(options.filter(option => option.checked).map(option => option.value))}`}
-        for="cbxDemo1">
-        {options.map(
-          option =>
-            <ods-inputoption id={option.id} label={option.label} type="checkbox" value={option.value} checked={option.checked || undefined} onInput={handleInput}></ods-inputoption>)}
-	    </ods-inputoption-checkbox-group>
+      <h1 className="heading--display">Web Component Demo</h1>
+      <auro-checkbox-group required ref={checkboxGroupEl}>
+        <span slot="legend">{`Your Choice: ${JSON.stringify(
+          options
+            .filter((option) => option.checked)
+            .map((option) => option.value)
+        )}`}</span>
+        {options.map((option) => (
+          <auro-checkbox
+            key={option.id}
+            id={option.id}
+            name="cbxDemo"
+            value={option.value}
+            checked={option.checked || undefined}>
+            {option.label}
+          </auro-checkbox>
+        ))}
+      </auro-checkbox-group>
       <auro-button onClick={toast} secondary={type === 'secondary' || undefined}>Toast</auro-button>
       <auro-button onClick={changeType}>Change Toaster</auro-button>
     </main>
