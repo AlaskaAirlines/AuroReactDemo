@@ -1,5 +1,7 @@
 # React Demo
 
+![Travis (.org)](https://img.shields.io/travis/alaskaairlines/auroreactdemo?style=for-the-badge) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/AlaskaAirlines/AuroReactDemo?style=for-the-badge) 
+
 Interested in starting a new project using Auro and React? This demo project is a complete example that includes basic setup. 
 
 To locally run this demo: 
