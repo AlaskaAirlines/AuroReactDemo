@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/AuroReactDemo/compare/v1.0.2...v1.1.0) (2020-07-21)
+
+
+### Features
+
+* replace inputoptions with auro-checkbox [#13](https://github.com/AlaskaAirlines/AuroReactDemo/issues/13) ([1926114](https://github.com/AlaskaAirlines/AuroReactDemo/commit/1926114c4194de2a4b2bdfd826012d4ca6c05ffb))
+
 ## [1.0.2](https://github.com/AlaskaAirlines/AuroReactDemo/compare/v1.0.1...v1.0.2) (2020-07-07)
 
 
