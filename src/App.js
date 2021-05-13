@@ -1,84 +1,190 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.scss';
 
-import Swipe from "@alaskaairux/ods-toast/dist/swipe.js";
-import Toaster from "@alaskaairux/ods-toast/dist/toaster";
-import "@alaskaairux/ods-toast/dist/toaster.css";
-
-window.Swipe = Swipe;
-const toaster = new Toaster();
-
 function App() {
-  const [type, setType] = useState('primary');
-  const [options, setOptions] = useState([
+  const [flierOptions] = useState([
+    {
+      id: 'radio1',
+      value: true,
+      label: 'Yes'
+    },
+    {
+      id: 'radio2',
+      value: false,
+      label: 'No'
+    }
+  ]);
+
+  const [destinationOptions, setDestinationOptions] = useState([
     {
       id: 'cbx1',
-      value: 'yes',
-      label: 'Yes',
+      value: 'lower48',
+      label: 'Lower 48',
       checked: false
     },
     {
       id: 'cbx2',
-      value: 'no',
-      label: 'No',
+      value: 'Alaska',
+      label: 'Alaksa',
+      checked: false
+    },
+    {
+      id: 'cbx3',
+      value: 'Hawaii',
+      label: 'Hawaii',
+      checked: false
+    },
+    {
+      id: 'cbx4',
+      value: 'Canada',
+      label: 'Canada',
+      checked: false
+    },
+    {
+      id: 'cbx5',
+      value: 'Mexico',
+      label: 'Mexico',
       checked: false
     }
   ]);
 
-  // Because the change event from auro-checkbox is a custom event, onChange does not pick it up
+  const [fName, setfName] = useState();
+  const [lName, setlName] = useState();
+  const [flier, setFlier] = useState(null);
+  const [destinations, setDestinations] = useState([]);
+
+  let {...destinatationElAttrs} = {}
+
+  if (!flier) {
+    destinatationElAttrs = {
+      ...destinatationElAttrs,
+      hidden: true
+    }
+  }
+
+  let {...submitElAttrs} = {}
+
+  if (!fName || !lName || flier === null) {
+    submitElAttrs = {
+      ...submitElAttrs,
+      disabled: true
+    }
+  }
+
+  // Because the change event from auro-checkbox and auro-radio is a custom event, onChange does not pick it up
   // due to React's synthetic event system
   // We need to add the event listener using a ref instead
   // If you do not need to support IE, you can listen to the input event inline instead of using a ref.
-  const checkboxGroupEl = useRef(null);
+
+  const flierGroupEl = useRef(null);
   useEffect(() => {
-    const checkboxGroup = checkboxGroupEl.current;
-    checkboxGroup.addEventListener('change', handleChange);
+    const flierGroup = flierGroupEl.current;
+    flierGroup.addEventListener('change', handleFlierChange);
     return function cleanup() {
-      checkboxGroup.removeEventListener('change', handleChange);
+      flierGroup.removeEventListener('change', handleFlierChange);
     };
   });
 
-  const changeType = () => {
-    const newType = type === 'primary' ? 'secondary' : 'primary';
-    setType(newType);
+  const destinationsGroupEl = useRef(null);
+  useEffect(() => {
+    const destinationGroup = destinationsGroupEl.current;
+    destinationGroup.addEventListener('change', handleDestinationChange);
+    return function cleanup() {
+      destinationGroup.removeEventListener('change', handleDestinationChange);
+    };
+  });
+
+  const handleFlierChange = (e) => {
+    const { target } = e;
+    const value = (target.value === 'true')
+
+    setFlier(value);
   }
 
-  const handleChange = (e) => {
+  const handleDestinationChange = (e) => {
     const { target } = e;
 
-    let updatedOptions = options.map(
+    let updatedDestinationOptions = destinationOptions.map(
       option => option.value === target.value  ?
         { ...option, checked: target.checked } : option);
-    setOptions(updatedOptions);
+    setDestinationOptions(updatedDestinationOptions);
+
+    let visitedDestinations = updatedDestinationOptions
+      .filter((option) => option.checked)
+      .map((option) => option.value)
+
+    setDestinations(visitedDestinations);
   }
 
-  const toast = () => {
-    const message = type === 'primary' ? 'message 1' : 'message 2';
-    toaster.add(message);
+  const getFormData = () => {
+    const formData = {
+      fName,
+      lName
+    }
+
+    if (flier !== null) {
+      formData.flier = flier;
+    }
+
+    if (flier && destinations.length > 0) {
+      formData.destinations = destinations
+    }
+
+    return formData;
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = getFormData();
+
+    console.warn('Form JSON Data:', formData);
+    alert(`Form JSON Data: ` + JSON.stringify(formData));
   }
 
   return (
     <main>
-      <h1 className="heading--display">Web Component Demo</h1>
-      <auro-checkbox-group required ref={checkboxGroupEl}>
-        <span slot="legend">{`Your Choice: ${JSON.stringify(
-          options
-            .filter((option) => option.checked)
-            .map((option) => option.value)
-        )}`}</span>
-        {options.map((option) => (
-          <auro-checkbox
-            key={option.id}
-            id={option.id}
-            name="cbxDemo"
-            value={option.value}
-            checked={option.checked || undefined}>
-            {option.label}
-          </auro-checkbox>
-        ))}
-      </auro-checkbox-group>
-      <auro-button onClick={toast} secondary={type === 'secondary' || undefined}>Toast</auro-button>
-      <auro-button onClick={changeType}>Change Toaster</auro-button>
+      <auro-header>React Web Component Demo</auro-header>
+      <form>
+        <auro-input label="First Name" required value={fName} onInput={(e) => setfName(e.target.value) }></auro-input>
+        <auro-input label="Last Name" required value={lName} onInput={(e) => setlName(e.target.value) }></auro-input>
+        <br />
+        <auro-radio-group ref={flierGroupEl} required>
+          <span slot="legend">
+            Have you ever flown with Alaska Air?
+          </span>
+          {flierOptions.map((option) => (
+            <auro-radio
+              key={option.id}
+              id={option.id}
+              label={option.label}
+              name={option.id}
+              value={option.value}
+              checked={option.checked || undefined}>
+            </auro-radio>
+          ))}
+        </auro-radio-group>
+        <auro-checkbox-group ref={destinationsGroupEl} {...destinatationElAttrs}>
+          <span slot="legend">
+            What destinations have you traveled to?
+          </span>
+          {destinationOptions.map((option) => (
+            <auro-checkbox
+              key={option.id}
+              id={option.id}
+              name="cbxDemo"
+              value={option.value}
+              checked={option.checked || undefined}>
+              {option.label}
+            </auro-checkbox>
+          ))}
+        </auro-checkbox-group>
+        <auro-button type="submit" onClick={handleSubmit} {...submitElAttrs}>Submit</auro-button>
+      </form>
+
+      <br />
+      <div className="formDataWrapper">
+        Form Data: {JSON.stringify(getFormData())}
+      </div>
     </main>
   );
 }
