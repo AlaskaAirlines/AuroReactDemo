@@ -1,9 +1,10 @@
 main {
   display: block; /* for IE11 */
-  position: relative;
-  max-width: 56em;
-  background-color: white;
-  padding: 2em;
-  margin: 0 auto;
-  box-sizing: border-box;
+  background-color: var(--auro-color-background-lightest);
+  padding: var(--auro-size-xl);
+}
+
+.formDataWrapper {
+  padding: var(--auro-size-xs) var(--auro-size-md);
+  background: repeating-linear-gradient(45deg,#f3f3f3,#f3f3f3 10px,var(--auro-color-base-white) 0,var(--auro-color-base-white) 20px);
 }
