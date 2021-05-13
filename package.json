@@ -1,6 +1,6 @@
 {
   "name": "auro-react-demo",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@commitlint/cli": "^9.1.2",
@@ -73,14 +73,12 @@
       "last 3 chrome version",
       "last 3 firefox version",
       "last 3 edge version",
-      "ie 11",
       "last 2 safari major version"
     ],
     "development": [
       "last 3 chrome version",
       "last 3 firefox version",
       "last 3 edge version",
-      "ie 11",
       "last 2 safari major version"
     ]
   }

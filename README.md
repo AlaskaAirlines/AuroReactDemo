@@ -33,64 +33,24 @@ The following steps will let you start using Web Components in your React applic
 
 ### Install
 
-The following command will install [auro-button](http://auro.alaskaair.com/components/auro/button), [design tokens](http://auro.alaskaair.com/getting-started/developers/design-tokens) and focus-visible.
+The following command will install
+* [auro-button](http://auro.alaskaair.com/components/auro/button)
+* [auro-checkbox](https://auro.alaskaair.com/components/auro/checkbox)
+* [auro-header](https://auro.alaskaair.com/components/auro/header)
+* [auro-input](https://auro.alaskaair.com/components/auro/input)
+* [auro-radio](https://auro.alaskaair.com/components/auro/radio)
+* [design tokens](http://auro.alaskaair.com/getting-started/developers/design-tokens)
+* [focus-visible](https://github.com/WICG/focus-visible)
 
 ```js
-$ npm install --save-dev @alaskaairux/auro-button @alaskaairux/design-tokens focus-visible
-```
-
-### Web Components polyfill
-
-This example loads the polyfills from a CDN, but you can serve them with your application if you want. Include the `defer` attribute to ensure that the polyfills do not prevent the app from loading.
-
-```html
-<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2/webcomponents-loader.js" defer></script>
-```
-
-Adding a reference to `webcomponents-loader.js` in the head of `public\index.html` will detect if the user's browser supports web components and will polyfill any required features.
-
-### Web components manifest
-
-Adding web components to a manifest, `webcomponents.js`, in the `./src` directory will load all the web components in the proper order needed to support legacy browsers.
-
-```js
-import '@alaskaairux/auro-button';
-```
-
-### Import from manifest
-
-Update `index.js` to import the Auro components once the polyfills have loaded. This guarantees that web components are not defined until the polyfills are ready.
-
-```js
-import * as serviceWorker from './serviceWorker';
-
-// add this line
-window.addEventListener('WebComponentsReady', () => {
-    return import('./webcomponents');
-});
-
-ReactDOM.render(<App />, document.getElementById('root'));
-```
-
-### Add the button
-
-In `App.js`, add a reference to `auro-button`.
-
-```js
-render() {
-  return (
-    <div className="App">
-      <auro-button onClick={() => alert('clicked!')}>Click Me</auro-button>
-    </div>
-  )
-}
+$ npm install --save-dev @alaskaairux/auro-button @alaskaairux/auro-checkbox @alaskaairux/auro-header @alaskaairux/auro-radio @alaskaairux/design-tokens focus-visible
 ```
 
 ## Importing WC Style Sheets
 
 WC Style Sheets (WCSS) is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for developers to create web experiences using the Auro Design Language.
 
-This resource is built using Sass, [node-sass](https://www.npmjs.com/package/node-sass) is the preferred library for Create React App.
+This resource is built using Sass, [Dart Sass](https://www.npmjs.com/package/sass) is the preferred library for Create React App.
 
 ```
 $ npm i sass -D
@@ -132,43 +92,21 @@ $ npm i @alaskaairux/icons -D
 
 Further documentation can be found in the repository's [README](https://auro.alaskaair.com/icons/install) file.
 
-## IE11 support
+### Add the components
 
-Add `"ie 11"` to the production and development `browserslist` configurations in `package.json` to test the app in IE11 during development.
+The following is an example of how to add one of the components imported earlier in this document. Following this example, you can add all of the components necessary to achieve your template design.
+
+In `App.js`, add a reference to `auro-button`.
 
 ```js
-"browserslist": {
-  "production": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all",
-    "ie 11"
-  ],
-  "development": [
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version",
-    "ie 11"
-  ]
+render() {
+  return (
+    <div className="App">
+      <auro-button onClick={() => alert('clicked!')}>Click Me</auro-button>
+    </div>
+  )
 }
 ```
-
-### react-app-polyfill
-
-Add the following lines to the top of `index.js`
-
-```js
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
-```
-
-This imports the necessary polyfills for using React and other features in legacy browsers.
-
-### Delete the .cache
-
-Delete the `.cache` directory in `node_modules`.
-
-Run `$ npm start` in the terminal and view the application in IE11.
 
 ## Development
 

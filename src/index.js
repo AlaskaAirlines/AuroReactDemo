@@ -1,22 +1,17 @@
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-window.addEventListener('WebComponentsReady', () => {
-    // At this point we are guaranteed that all required polyfills have
-    // loaded, and can use web components API's.
-    // The standard pattern is to load element definitions that call
-    // `customElements.define` here.
-    // Note: returning the import's promise causes the custom elements
-    // polyfill to wait until all definitions are loaded and then upgrade
-    // the document in one batch, for better performance.
-    return import('./webcomponents');
-});
+/* Import any web components used here */
+import '@alaskaairux/auro-button';
+import '@alaskaairux/auro-checkbox';
+import '@alaskaairux/auro-checkbox/dist/auro-checkbox-group';
+import '@alaskaairux/auro-header';
+import '@alaskaairux/auro-input';
+import "@alaskaairux/auro-radio";
+import "@alaskaairux/auro-radio/dist/auro-radio-group";
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
