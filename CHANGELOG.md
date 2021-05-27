@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [2.0.0](https://github.com/AlaskaAirlines/AuroReactDemo/compare/v1.1.0...v2.0.0) (2021-05-27)
+
+
+### Code Refactoring
+
+* update to current auro components [#17](https://github.com/AlaskaAirlines/AuroReactDemo/issues/17) ([0cd46bd](https://github.com/AlaskaAirlines/AuroReactDemo/commit/0cd46bdb25643ec25502b94a48cbceb7c91dcbc3))
+
+
+### BREAKING CHANGES
+
+* Removed all Orion components, complete content
+redesign using only Auro components
+
 # [1.1.0](https://github.com/AlaskaAirlines/AuroReactDemo/compare/v1.0.2...v1.1.0) (2020-07-21)
 
 
