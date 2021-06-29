@@ -72,11 +72,11 @@ At the top of the document, import basic dependencies:
 
 ```scss
 @import '~@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import "~@alaskaairux/web-core-style-sheets/dist/breakpoints";
-@import '~@alaskaairux/web-core-style-sheets/dist/fonts';
-@import "~@alaskaairux/web-core-style-sheets/dist/normalize";
-@import "~@alaskaairux/web-core-style-sheets/dist/essentials";
-@import "~@alaskaairux/web-core-style-sheets/dist/utilityClasses";
+@import "~@alaskaairux/webcorestylesheets/dist/breakpoints";
+@import '~@alaskaairux/webcorestylesheets/dist/fonts';
+@import "~@alaskaairux/webcorestylesheets/dist/normalize";
+@import "~@alaskaairux/webcorestylesheets/dist/essentials";
+@import "~@alaskaairux/webcorestylesheets/dist/utilityClasses";
 ```
 
 For more information about these files, be sure to see [the full API](https://alaskaairlines.github.io/WebCoreStyleSheets/), including the various Utility Selectors currently available.
