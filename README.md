@@ -8,6 +8,8 @@ To locally run this demo:
 $ git clone https://github.com/AlaskaAirlines/AuroReactDemo.git
 ```
 
+See working demo - https://auro-react-demo.surge.sh/
+
 The app runs and works in all [supported browsers](http://auro.alaskaair.com/support/browsersSupport). Please explore the project source to see how the Auro components are being used in a React development environment.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -43,7 +45,7 @@ The following command will install
 * [focus-visible](https://github.com/WICG/focus-visible)
 
 ```js
-$ npm install --save-dev @alaskaairux/auro-button @alaskaairux/auro-checkbox @alaskaairux/auro-header @alaskaairux/auro-radio @alaskaairux/design-tokens focus-visible
+$ npm install --save-dev @alaskaairux/auro-button @alaskaairux/auro-checkbox @alaskaairux/auro-header @aurodesignsystem/auro-input @alaskaairux/auro-radio @alaskaairux/design-tokens focus-visible
 ```
 
 ## Importing WC Style Sheets

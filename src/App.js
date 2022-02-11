@@ -144,10 +144,19 @@ function App() {
   return (
     <main>
       <auro-header>React Web Component Demo</auro-header>
+
       <form>
-        <auro-input label="First Name" required value={fName} onInput={(e) => setfName(e.target.value) }></auro-input>
-        <auro-input label="Last Name" required value={lName} onInput={(e) => setlName(e.target.value) }></auro-input>
+        {/* Required inputs */}
+        <auro-input bordered required value={fName} onInput={(e) => setfName(e.target.value) }>
+          <span slot="label">First Name</span>
+        </auro-input>
+        <auro-input bordered required value={lName} onInput={(e) => setlName(e.target.value) }>
+          <span slot="label">Last Name</span>
+        </auro-input>
+
         <br />
+
+        {/* Required radio button options */}
         <auro-radio-group ref={flierGroupEl} required>
           <span slot="legend">
             Have you ever flown with Alaska Air?
@@ -163,6 +172,8 @@ function App() {
             </auro-radio>
           ))}
         </auro-radio-group>
+
+        {/* Required checkbox options */}
         <auro-checkbox-group ref={destinationsGroupEl} {...destinatationElAttrs}>
           <span slot="legend">
             What destinations have you traveled to?
@@ -178,10 +189,14 @@ function App() {
             </auro-checkbox>
           ))}
         </auro-checkbox-group>
+
+        {/* Submit button is not active until all requirements are meet */}
         <auro-button type="submit" onClick={handleSubmit} {...submitElAttrs}>Submit</auro-button>
       </form>
 
       <br />
+
+      {/* Visual of data entered */}
       <div className="formDataWrapper">
         Form Data: {JSON.stringify(getFormData())}
       </div>
