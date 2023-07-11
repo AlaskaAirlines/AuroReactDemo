@@ -3,15 +3,15 @@
   "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "@commitlint/cli": "^16.1.0",
+    "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^16.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/npm": "^9.0.0",
+    "@semantic-release/npm": "^10.0.4",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "^4.0.3",
-    "semantic-release": "^19.0.2"
+    "react-scripts": "^5.0.1",
+    "semantic-release": "^21.0.7"
   },
   "devDependencies": {
     "@alaskaairux/auro-button": "^6.3.7",
