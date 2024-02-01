@@ -8,9 +8,9 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^9.0.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-scripts": "^4.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
     "semantic-release": "^19.0.2"
   },
   "devDependencies": {
@@ -24,8 +24,8 @@
     "@alaskaairux/webcorestylesheets": "^3.7.3",
     "@aurodesignsystem/auro-input": "^2.2.0",
     "focus-visible": "^5.2.0",
-    "husky": "^6.0.0",
-    "sass": "^1.49.7"
+    "husky": "^9.0.10",
+    "sass": "^1.70.0"
   },
   "scripts": {
     "start": "react-scripts start",
