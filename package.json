@@ -8,10 +8,8 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^9.0.0",
-    "konva": "^9.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-konva": "^18.2.10",
     "react-scripts": "^5.0.1",
     "semantic-release": "^19.0.2"
   },
